@@ -15,13 +15,17 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font-size: 100%;
+  color: white;
   font-family: sans-serif;
   vertical-align: baseline;
+}
+body{background-color: pink;
 }
 
 *{box-sizing: border-box;}
 h1{
   text-align: center;
+  color: white;
   font-size: 26pt;
   margin-top: 0.5em;
 }
@@ -42,17 +46,31 @@ table td {
   width: 120px;
 }
 td.col2{
-  border-left: black solid 1px;
-  border-right: black solid 1px;
+  border-left: white solid 1px;
+  border-right: white solid 1px;
 }
 tr#row2{
-  border-top: black solid 1px;
-  border-bottom: black solid 1px;
+  border-top: white solid 1px;
+  border-bottom: white solid 1px;
 }
 p.status{
   text-align: center;
   margin:20px 0;
 }
+.x-move{
+  background: url(../images/dog.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: #C1E8FF;
+  color: rgba(255,255,255,0);
+}
+.o-move{
+  background: url(../images/cat.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: white;
+  color: rgba(255,255,255,0);
+}
 .win {
-  background-color: blue;
+  background-color: yellow;
 }
