@@ -58,6 +58,7 @@ var board = [
     if(play === a['text'] && play === b['text'] && play === c['text']){
       $(a['class']+', '+b['class']+', '+c['class']).addClass('win');
       $('p.status').text(play+ ' wins!');
+      $('p.status').addClass('winner');
       return true;
     }else{ return false;}
   }

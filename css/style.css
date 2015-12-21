@@ -57,6 +57,9 @@ p.status{
   text-align: center;
   margin:20px 0;
 }
+.winner{
+  font-size: 20pt;
+}
 .x-move{
   background: url(../images/dog.png) no-repeat;
   background-size: cover;
