@@ -56,9 +56,10 @@ tr#row2{
 p.status{
   text-align: center;
   margin:20px 0;
+  font-size: 20pt;
 }
 .winner{
-  font-size: 20pt;
+  font-size: 28pt;
 }
 .x-move{
   background: url(../images/dog.png) no-repeat;
