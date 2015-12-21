@@ -25,6 +25,8 @@ var board = [
     if(!won && count<9){
     //} 
       switchIt();
+    }else if (!won && count === 9) {
+      $('p.status').text("It's a draw!");
     }
     // $('p.status').text(current.txt+', your turn!');
 
