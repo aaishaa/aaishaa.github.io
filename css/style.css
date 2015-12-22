@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -16,18 +18,25 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   color: white;
-  font-family: sans-serif;
   vertical-align: baseline;
 }
+html{
+  height: 100%;
+
+}
+
 body{background-color: pink;
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
 }
 
 *{box-sizing: border-box;}
 h1{
   text-align: center;
+  font-weight: 700;
   color: white;
-  font-size: 26pt;
-  margin-top: 0.5em;
+  font-size: 42pt;
+  margin: 0.25em 0;
 }
 table{
   height: 360px;
@@ -55,12 +64,10 @@ tr#row2{
 }
 p.status{
   text-align: center;
-  margin:20px 0;
+  margin: 2em 0 0.25em 0;
   font-size: 20pt;
 }
-.winner{
-  font-size: 28pt;
-}
+
 .x-move{
   background: url(../images/dog.png) no-repeat;
   background-size: cover;
@@ -74,6 +81,21 @@ p.status{
   background-position: center;
   background-color: white;
   color: rgba(255,255,255,0);
+}
+svg {
+  width: 80%;
+  height: auto;
+  margin: 0 auto;
+}
+.path {
+  stroke-dasharray: 204;
+  stroke-dashoffset: 204;
+  animation: dash .4s linear forwards;
+}
+@keyframes dash {
+  to{
+    stroke-dashoffset: 408;
+  }
 }
 .win {
   background-color: yellow;
