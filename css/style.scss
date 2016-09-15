@@ -1,6 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-* {
-  box-sizing: border-box; }
+@mixin parent-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+}
+*{box-sizing: border-box;}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -11,8 +16,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -20,74 +25,80 @@ time, mark, audio, video {
   border: 0;
   font-size: 100%;
   color: white;
-  vertical-align: baseline; }
-
-html {
+  vertical-align: baseline;
+}
+html{
   height: 100vh;
-  /** body **/ }
-  html body {
+
+  body {
     position: relative;
     background: linear-gradient(#629DBF, #F68CBC);
     height: 100vh;
     font-family: 'Montserrat', sans-serif;
-    /* .header */
-    /* table */
-    /* .message */ }
-    html body .header {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      resize: both;
+
+    .header{
+      @include parent-center;
       height: 20vh;
-      /** h1 **/ }
-      html body .header h1 {
+      
+      h1 {
         text-align: center;
         font-weight: 700;
         color: white;
-        font-size: 42pt; }
-    html body table {
+        font-size: 42pt;
+        // margin: 0.25em 0;
+      } /** h1 **/
+    } /* .header */
+  
+    table {
       height: 60vh;
       margin: 2.5vh auto;
       border-collapse: collapse;
-      /* tr */ }
-      html body table tr {
+
+      tr {
         width: 100%;
-        /* td */ }
-        html body table tr#row2 {
+
+        &#row2{
           border-top: white solid 1px;
-          border-bottom: white solid 1px; }
-        html body table tr td {
+          border-bottom: white solid 1px;
+        }
+        td {
           font-size: 56pt;
           text-align: center;
           vertical-align: middle;
           height: 20vh;
-          width: 20vh; }
-          html body table tr td.x-move {
+          width: 20vh;
+
+          &.x-move{
             background: url(../images/dog.png) no-repeat;
             background-size: cover;
             background-position: center;
             background-color: #C1E8FF;
-            color: rgba(255, 255, 255, 0); }
-          html body table tr td.o-move {
+            color: rgba(255,255,255,0);
+          }
+          &.o-move{
             background: url(../images/cat.png) no-repeat;
             background-size: cover;
             background-position: center;
             background-color: white;
-            color: rgba(255, 255, 255, 0); }
-          html body table tr td.col2 {
+            color: rgba(255,255,255,0);
+          }
+          &.col2{
             border-left: white solid 1px;
-            border-right: white solid 1px; }
-    html body div.message {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      resize: both;
+            border-right: white solid 1px;
+          }
+
+        } /* td */
+
+      } /* tr */
+    } /* table */
+    div.message{
+      @include parent-center;
       height: 15vh;
-      /* p.status */ }
-      html body div.message p.status {
+      p.status{
         display: inline;
-        font-size: 20pt; }
-
-/* html */
-
-/*# sourceMappingURL=style.css.map */
+        // margin: 2em 0 0.25em 0;
+        font-size: 20pt;
+      } /* p.status */
+    } /* .message */
+  } /** body **/
+} /* html */
