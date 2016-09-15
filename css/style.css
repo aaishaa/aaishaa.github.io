@@ -90,6 +90,7 @@ html {
       /* p.status */ }
       html body div.message p.status {
         display: inline;
+        color: black;
         font-size: 20pt; }
 
 /* html */
