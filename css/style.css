@@ -24,12 +24,14 @@ time, mark, audio, video {
 
 html {
   height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   /** body **/ }
   html body {
     position: relative;
     background: linear-gradient(#629DBF, #F68CBC);
     height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Shrikhand', cursive;
     /* .header */
     /* table */
     /* .message */ }
@@ -41,9 +43,10 @@ html {
       height: 20vh;
       /** h1 **/ }
       html body .header h1 {
+        font-family: 'Bungee Shade', cursive;
         text-align: center;
         font-weight: 700;
-        color: white;
+        color: black;
         font-size: 42pt; }
     html body table {
       height: 60vh;

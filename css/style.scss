@@ -29,21 +29,24 @@ time, mark, audio, video {
 }
 html{
   height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 
   body {
     position: relative;
     background: linear-gradient(#629DBF, #F68CBC);
     height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Shrikhand', cursive;
 
     .header{
       @include parent-center;
       height: 20vh;
       
       h1 {
+        font-family: 'Bungee Shade', cursive;
         text-align: center;
         font-weight: 700;
-        color: white;
+        color: black;
         font-size: 42pt;
         // margin: 0.25em 0;
       } /** h1 **/
