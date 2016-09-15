@@ -74,6 +74,8 @@ html {
             background-position: center;
             background-color: white;
             color: rgba(255, 255, 255, 0); }
+          html body table tr td.win {
+            background-color: yellow; }
           html body table tr td.col2 {
             border-left: white solid 1px;
             border-right: white solid 1px; }

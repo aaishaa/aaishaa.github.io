@@ -82,6 +82,9 @@ html{
             background-color: white;
             color: rgba(255,255,255,0);
           }
+          &.win {
+            background-color: yellow;
+          }
           &.col2{
             border-left: white solid 1px;
             border-right: white solid 1px;
