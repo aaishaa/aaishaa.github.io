@@ -117,13 +117,27 @@ html {
         html body div.container div.overlay div.popup {
           text-align: center;
           height: 40vh;
-          width: 60vh; }
+          width: 60vh;
+          border: 0.4rem solid #fff;
+          border-radius: 2rem; }
           html body div.container div.overlay div.popup p {
             display: block;
             font-size: 1rem;
             margin: 5% 0; }
             html body div.container div.overlay div.popup p:nth-child(1) {
               font-size: 2rem; }
+            html body div.container div.overlay div.popup p:nth-child(3) button {
+              font-size: 1rem;
+              color: white;
+              background: transparent;
+              display: inline-block;
+              padding: 0.5rem 1rem;
+              margin: 0 10%;
+              border: 0.2rem solid white;
+              border-radius: 1.5em; }
+              html body div.container div.overlay div.popup p:nth-child(3) button:hover {
+                background: rgba(255, 255, 255, 0.6);
+                color: rgba(0, 0, 0, 0.4); }
       html body div.container div.message {
         display: flex;
         justify-content: center;
@@ -136,17 +150,6 @@ html {
           color: black;
           font-size: 20pt;
           margin: 0; }
-      html body div.container button {
-        font-size: 1.5rem;
-        color: white;
-        background: transparent;
-        padding: 0.5rem 1rem;
-        margin: 0 10%;
-        border: 0.2rem solid white;
-        border-radius: 1.5em; }
-        html body div.container button:hover {
-          background: rgba(255, 255, 255, 0.6);
-          color: rgba(0, 0, 0, 0.4); }
   html .blur {
     -webkit-filter: url("#blur");
     filter: url("#url"); }

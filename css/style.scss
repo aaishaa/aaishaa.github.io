@@ -152,12 +152,30 @@ html{
         text-align: center;
         height: 40vh;
         width: 60vh;
+        border: 0.4rem solid #fff;
+        border-radius: 2rem;
         p{
           display: block;
           font-size: 1rem;
           margin: 5% 0;
           &:nth-child(1){
             font-size: 2rem;
+          }
+          &:nth-child(3){
+            button{
+              font-size: 1rem;
+              color: white;
+              background: transparent;
+              display: inline-block;
+              padding: 0.5rem 1rem;
+              margin: 0 10%;
+              border: 0.2rem solid white;
+              border-radius: 1.5em;
+              &:hover{
+                background: rgba(255,255,255, 0.6);
+                color: rgba(0,0,0,0.4);
+              }
+            }
           }
         }
         
@@ -173,19 +191,7 @@ html{
         margin: 0;
       } /* p.status */
     } /* .message */
-    button{
-      font-size: 1.5rem;
-      color: white;
-      background: transparent;
-      padding: 0.5rem 1rem;
-      margin: 0 10%;
-      border: 0.2rem solid white;
-      border-radius: 1.5em;
-      &:hover{
-        background: rgba(255,255,255, 0.6);
-        color: rgba(0,0,0,0.4);
-      }
-    }
+    
     }/*container*/
   } /** body **/
   .blur{
