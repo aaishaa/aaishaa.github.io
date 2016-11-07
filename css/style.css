@@ -1,163 +1,203 @@
 @import "https://fonts.googleapis.com/css?family=Bungee+Shade|Shrikhand";
+.game-bg {
+  -webkit-filter: url("#blur");
+  filter: url("#blur");
+  background: url(".game-container"); }
+
 html {
   box-sizing: border-box;
   height: 100vh;
   -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  /** body **/ }
-  html body {
-    background: linear-gradient(#629DBF, #F68CBC);
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    font-family: 'Shrikhand', cursive;
-    /*container*/ }
-    html body div.container {
-      /* .header */
-      /* table */
-      /* .message */ }
-      html body div.container .header {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        resize: both;
-        height: 20vh;
-        /** h1 **/ }
-        html body div.container .header h1 {
-          font-family: 'Bungee Shade', cursive;
-          text-align: center;
-          font-weight: 700;
-          color: black;
-          font-size: 42pt; }
-      html body div.container div.game-container {
-        height: 65vh;
-        display: flex;
-        justify-content: center;
-        align-items: center; }
-      html body div.container table {
-        box-sizing: border-box;
-        border-collapse: collapse;
-        display: block;
-        border-radius: 10%;
-        overflow: hidden;
-        position: relative;
-        border: 1px solid black;
-        /*tbody*/ }
-        html body div.container table tbody {
-          box-sizing: border-box;
-          width: 20vh;
-          /* tr */ }
-          html body div.container table tbody tr {
-            height: 20vh;
-            /* td */ }
-            html body div.container table tbody tr td {
-              width: 20vh;
-              box-sizing: border-box;
-              position: relative; }
-              html body div.container table tbody tr td.row1, html body div.container table tbody tr td.row2 {
-                border-bottom: 1px solid black; }
-              html body div.container table tbody tr td.col2 {
-                border-left: 1px solid black;
-                border-right: 1px solid black; }
-              html body div.container table tbody tr td:hover:not(.x-move):not(.o-move) {
-                background: rgba(0, 0, 0, 0.2); }
-              html body div.container table tbody tr td.x-move {
-                position: relative; }
-                html body div.container table tbody tr td.x-move svg {
-                  position: absolute;
-                  height: 15vh;
-                  width: 15vh;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%); }
-                  html body div.container table tbody tr td.x-move svg line {
-                    stroke-width: 15;
-                    stroke: #000000;
-                    stroke-linecap: round;
-                    stroke-dasharray: 115;
-                    stroke-dashoffset: 115; }
-                    html body div.container table tbody tr td.x-move svg line#line1 {
-                      animation: dash 0.3s linear forwards; }
-                    html body div.container table tbody tr td.x-move svg line#line2 {
-                      animation: dash 0.3s linear 0.4s forwards; }
-              html body div.container table tbody tr td.o-move {
-                position: relative;
-                /* svg */ }
-                html body div.container table tbody tr td.o-move svg {
-                  position: absolute;
-                  height: 15vh;
-                  width: 15vh;
-                  top: 50%;
-                  left: 50%;
-                  transform: translate(-50%, -50%);
-                  /* .path */ }
-                  html body div.container table tbody tr td.o-move svg ellipse {
-                    stroke: #000000;
-                    stroke-dasharray: 217;
-                    stroke-dashoffset: 217;
-                    stroke-linecap: round;
-                    transform-origin: center;
-                    transform: rotate(-30deg);
-                    animation: dash 0.5s linear forwards; }
-              html body div.container table tbody tr td.win svg line, html body div.container table tbody tr td.win svg ellipse {
-                stroke: #fff; }
-      html body div.container div.overlay {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        resize: both;
-        position: absolute;
-        z-index: 10;
-        background: rgba(255, 255, 255, 0.2);
-        height: 100%;
-        width: 100%;
-        top: 0;
-        left: 0;
-        display: none; }
-        html body div.container div.overlay div.popup {
-          text-align: center;
-          height: 40vh;
-          width: 60vh;
-          border: 0.4rem solid #fff;
-          border-radius: 2rem; }
-          html body div.container div.overlay div.popup p {
-            display: block;
-            font-size: 1rem;
-            margin: 5% 0; }
-            html body div.container div.overlay div.popup p:nth-child(1) {
-              font-size: 2rem; }
-            html body div.container div.overlay div.popup p:nth-child(3) button {
-              font-size: 1rem;
-              color: white;
-              background: transparent;
-              display: inline-block;
-              padding: 0.5rem 1rem;
-              margin: 0 10%;
-              border: 0.2rem solid white;
-              border-radius: 1.5em; }
-              html body div.container div.overlay div.popup p:nth-child(3) button:hover {
-                background: rgba(255, 255, 255, 0.6);
-                color: rgba(0, 0, 0, 0.4); }
-      html body div.container div.message {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        resize: both;
-        height: 15vh;
-        /* p.status */ }
-        html body div.container div.message p.status {
-          display: inline;
-          color: black;
-          font-size: 20pt;
-          margin: 0; }
-  html .blur {
-    -webkit-filter: url("#blur");
-    filter: url("#url"); }
+  text-rendering: optimizeLegibility; }
 
-/* html */
+body {
+  background: linear-gradient(#629DBF, #F68CBC);
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Shrikhand', cursive; }
+
+/** body **/
+.container.blur {
+  mask: url(#mask);
+  filter: url(#blur); }
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  height: 20vh;
+  /** h1 **/ }
+  .header h1 {
+    font-family: 'Bungee Shade', cursive;
+    text-align: center;
+    font-weight: 700;
+    color: black;
+    font-size: 9vh; }
+
+/* .header */
+div.game-container {
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* table */ }
+  div.game-container table {
+    box-sizing: border-box;
+    border-collapse: collapse;
+    display: block;
+    border-radius: 10%;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid black;
+    /*tbody*/ }
+    div.game-container table tbody {
+      box-sizing: border-box;
+      width: 20vh;
+      /* tr */ }
+      div.game-container table tbody tr {
+        height: 20vh;
+        /* td */ }
+        div.game-container table tbody tr td {
+          width: 20vh;
+          box-sizing: border-box;
+          position: relative; }
+          div.game-container table tbody tr td.row1, div.game-container table tbody tr td.row2 {
+            border-bottom: 1px solid black; }
+          div.game-container table tbody tr td.col2 {
+            border-left: 1px solid black;
+            border-right: 1px solid black; }
+          div.game-container table tbody tr td:hover:not(.x-move):not(.o-move) {
+            background: rgba(0, 0, 0, 0.2); }
+          div.game-container table tbody tr td.x-move {
+            position: relative; }
+            div.game-container table tbody tr td.x-move svg {
+              position: absolute;
+              height: 15vh;
+              width: 15vh;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%); }
+              div.game-container table tbody tr td.x-move svg line {
+                stroke-width: 15;
+                stroke: #000000;
+                stroke-linecap: round;
+                stroke-dasharray: 115;
+                stroke-dashoffset: 115; }
+                div.game-container table tbody tr td.x-move svg line#line1 {
+                  animation: dash 0.3s linear forwards; }
+                div.game-container table tbody tr td.x-move svg line#line2 {
+                  animation: dash 0.3s linear 0.4s forwards; }
+          div.game-container table tbody tr td.o-move {
+            position: relative;
+            /* svg */ }
+            div.game-container table tbody tr td.o-move svg {
+              position: absolute;
+              height: 15vh;
+              width: 15vh;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              /* ellipse */ }
+              div.game-container table tbody tr td.o-move svg ellipse {
+                stroke: #000000;
+                stroke-dasharray: 217;
+                stroke-dashoffset: 217;
+                stroke-linecap: round;
+                transform-origin: center;
+                transform: rotate(-30deg);
+                animation: dash 0.5s linear forwards; }
+          div.game-container table tbody tr td.win svg line, div.game-container table tbody tr td.win svg ellipse {
+            stroke: #fff; }
+
+div.overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  position: absolute;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.2);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none; }
+  div.overlay div.popup {
+    text-align: center;
+    position: relative;
+    width: 70vw;
+    margin: 0 auto; }
+    div.overlay div.popup::before {
+      z-index: -1;
+      display: block;
+      position: absolute;
+      content: ' ';
+      background-image: url(".container");
+      filter: url("#blur"); }
+    div.overlay div.popup p {
+      display: block;
+      font-size: 1rem;
+      margin: 5% 0; }
+      div.overlay div.popup p:nth-child(1) {
+        font-size: 7.6875vh; }
+      div.overlay div.popup p:nth-child(3) button {
+        font-size: 3.6875vh;
+        background: transparent;
+        display: inline-block;
+        padding: 0.5rem 2rem;
+        margin: 0 10%;
+        border: 0.2rem solid black;
+        border-radius: 1.5em; }
+        div.overlay div.popup p:nth-child(3) button:hover {
+          background: rgba(255, 255, 255, 0.6);
+          color: rgba(0, 0, 0, 0.4); }
+
+div.message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  resize: both;
+  height: 15vh;
+  /* p.status */ }
+  div.message p.status {
+    display: inline;
+    color: black;
+    font-size: 20pt;
+    margin: 0; }
+
+/* .message */
+svg#filter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%); }
+
+#rect {
+  height: 40vh;
+  width: 60vh;
+  rx: 10%;
+  ry: 10%;
+  border: 0.4rem solid #fff;
+  border-radius: 2rem; }
+
+.blur {
+  -webkit-filter: url("#blur");
+  filter: url("#blur"); }
+
 @keyframes dash {
   to {
     stroke-dashoffset: 0; } }
 /*dash animation*/
+@media only screen and (max-width: 645px) {
+  .header h1 {
+    font-size: 6vh; }
+
+  div.overlay {
+    width: 100vw; }
+    div.overlay div.popup {
+      margin: 0;
+      width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */
