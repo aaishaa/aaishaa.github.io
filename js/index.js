@@ -64,7 +64,8 @@ function matchMe(a, b, c){  // checks three values on the board to see if the cu
     if(m === a['txt'] && m === b['txt'] && m === c['txt']){      // if win found in current group
       $(a['class']+', '+b['class']+', '+c['class']).addClass('win');    //  set current group to class 'win'
       setTimeout(function(){
-        $('.game-container, .message').addClass("blur");
+        // $('.header, .message, .game-container').addClass("blur");
+      $('.container').addClass("blur");
       $('.overlay').fadeIn("slow").css("display", "flex");
       $('div.overlay div p:nth-child(1)').text(m+ ' wins!');
       $('p.status').text('Player '+ m +', you start!');
@@ -96,12 +97,13 @@ function matchMe(a, b, c){  // checks three values on the board to see if the cu
    return hasWin;   // returns boolean hasWin
   }
  $("#replay").on("click",function(){
-   $(".overlay").fadeOut("slow");
+   $(".overlay").fadeOut("slow", function(){
     $("td").each(function(){
       $(this).removeClass("x-move o-move win");
       $(this).html("");
+      $('.container').removeClass("blur");
     });
-   $('.game-container, .message').removeClass("blur");
+   });
    // $('.message').text("")
     count = 0;
     board = [];

@@ -52,6 +52,7 @@ var board = [];
     if(m === a['text'] && m === b['text'] && m === c['text']){      // if win found in current group
       $(a['class']+', '+b['class']+', '+c['class']).addClass('win');    //  set current group to class 'win'
       $('p.status').text(m+ ' wins!');
+      $('.header h1, .message, .game-container').addClass("blur");
       return true;
     }else{ return false;}
   }
